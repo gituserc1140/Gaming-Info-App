@@ -3,6 +3,7 @@ import requests
 
 REPO_URL = "https://github.com/gituserc1140/RAWG-Games"
 SPONSOR_URL = "https://github.com/sponsors/gituserc1140"
+REQUEST_TIMEOUT_SECONDS = 20
 
 def fetch_games(api_key, query):
     url = "https://api.rawg.io/api/games"
@@ -10,7 +11,7 @@ def fetch_games(api_key, query):
         response = requests.get(
             url,
             params={"key": api_key, "search": query},
-            timeout=20,
+            timeout=REQUEST_TIMEOUT_SECONDS,
         )
     except requests.RequestException as exc:
         st.error(f"Network error while fetching games: {exc}")
@@ -42,13 +43,13 @@ def main():
     query = st.text_input("Search for a game")
     search_clicked = st.button("Search")
 
-    if search_clicked and not api_key:
-        st.warning("Please enter your RAWG API key to search for games.")
-        return
-
-    if search_clicked and not query:
-        st.warning("Please enter a game name to search.")
-        return
+    if search_clicked:
+        if not api_key:
+            st.warning("Please enter your RAWG API key to search for games.")
+            return
+        if not query:
+            st.warning("Please enter a game name to search.")
+            return
 
     if search_clicked and api_key and query:
         games = fetch_games(api_key, query)
