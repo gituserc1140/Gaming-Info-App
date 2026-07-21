@@ -123,6 +123,7 @@ def main():
     render_project_links()
 
     api_key = st.text_input("Enter your RAWG API Key", type="password")
+    st.caption("Don't have an API key? [Get one free at rawg.io](https://rawg.io/apiv2)")
     query = st.text_input("Search for a game")
     if not api_key and not query:
         st.info("Enter your RAWG API key and a game name to enable search.")
