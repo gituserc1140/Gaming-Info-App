@@ -59,7 +59,7 @@ def main():
         games = fetch_games(api_key, query)
         if games:
             for game in games:
-                st.write(f"**{game.get('name', 'Unknown title')}**")
+                st.write(f"**{game.get('name', 'N/A')}**")
                 if game.get("background_image"):
                     st.image(game["background_image"], width=200)
                 st.write(f"Rating: {game.get('rating', 'N/A')}")
