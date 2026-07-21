@@ -42,12 +42,13 @@ def render_project_links():
 GAMING_CSS = """
 <style>
 /* ── Base ───────────────────────────────────────────────────── */
-html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
-    background-color: #0a0a14 !important;
+html, body, .stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"],
+[data-testid="stAppViewContainer"] > .main {
+    background: radial-gradient(circle at top, #171736 0%, #0a0a14 48%, #06060f 100%) !important;
     color: #e0e0f0 !important;
 }
 [data-testid="stHeader"] {
-    background-color: #0a0a14 !important;
+    background-color: rgba(10, 10, 20, 0.85) !important;
 }
 [data-testid="stSidebar"] {
     background-color: #0d0d1e !important;
@@ -65,19 +66,19 @@ p, li, label, div {
 }
 
 /* ── Inputs ─────────────────────────────────────────────────── */
-input[type="text"], input[type="password"] {
+div[data-baseweb="input"] input {
     background-color: #12122a !important;
     color: #e0e0f0 !important;
     border: 1px solid #7b2fff !important;
     border-radius: 6px !important;
 }
-input[type="text"]:focus, input[type="password"]:focus {
+div[data-baseweb="input"]:focus-within {
     border-color: #00e5ff !important;
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.4) !important;
 }
 
 /* ── Buttons ────────────────────────────────────────────────── */
-button[kind="primary"], [data-testid="baseButton-primary"] {
+.stButton > button, button[kind="primary"], [data-testid="baseButton-primary"] {
     background: linear-gradient(135deg, #7b2fff, #00e5ff) !important;
     color: #ffffff !important;
     border: none !important;
@@ -89,7 +90,7 @@ button[kind="primary"], [data-testid="baseButton-primary"] {
 button[kind="primary"]:hover, [data-testid="baseButton-primary"]:hover {
     opacity: 0.85 !important;
 }
-[data-testid="baseButton-secondary"] {
+[data-testid="baseButton-secondary"], [data-testid="stLinkButton"] a {
     background-color: #12122a !important;
     color: #00e5ff !important;
     border: 1px solid #00e5ff !important;
