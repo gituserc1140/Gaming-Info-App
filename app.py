@@ -41,9 +41,11 @@ def main():
 
     api_key = st.text_input("Enter your RAWG API Key", type="password")
     query = st.text_input("Search for a game")
-    if not api_key:
+    if not api_key and not query:
+        st.info("Enter your RAWG API key and a game name to enable search.")
+    elif not api_key:
         st.info("Enter your RAWG API key to enable search.")
-    if not query:
+    elif not query:
         st.info("Enter a game name to enable search.")
 
     search_clicked = st.button("Search", disabled=not (api_key and query))
