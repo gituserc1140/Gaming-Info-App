@@ -42,7 +42,7 @@ def render_project_links():
 GAMING_CSS = """
 <style>
 /* ── Base ───────────────────────────────────────────────────── */
-html, body, .stApp, [data-testid="stAppViewContainer"] > .main {
+html, body, [data-testid="stAppViewContainer"] > .main {
     background: radial-gradient(circle at top, #171736 0%, #0a0a14 48%, #06060f 100%) !important;
     color: #e0e0f0 !important;
 }
@@ -77,7 +77,7 @@ div[data-baseweb="input"]:focus-within {
 }
 
 /* ── Buttons ────────────────────────────────────────────────── */
-.stButton > button, button[kind="primary"], [data-testid="baseButton-primary"] {
+.stButton > button, [data-testid="baseButton-primary"] {
     background: linear-gradient(135deg, #7b2fff, #00e5ff) !important;
     color: #ffffff !important;
     border: none !important;
@@ -86,7 +86,7 @@ div[data-baseweb="input"]:focus-within {
     letter-spacing: 0.5px;
     transition: opacity 0.2s;
 }
-button[kind="primary"]:hover, [data-testid="baseButton-primary"]:hover {
+.stButton > button:hover, [data-testid="baseButton-primary"]:hover {
     opacity: 0.85 !important;
 }
 [data-testid="baseButton-secondary"], [data-testid="stLinkButton"] a {
