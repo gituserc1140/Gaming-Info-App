@@ -3,6 +3,7 @@
 Streamlit app for searching video games using the [RAWG API](https://rawg.io/apidocs).  
 Users can enter their own API key directly in the app UI and search for games by name.
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rawg-games-zj8dct6k6edg3r6swkptat.streamlit.app/)
 [![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor%20me%20on-GitHub-EA4AAA?logo=githubsponsors&style=flat-square)](https://github.com/sponsors/gituserc1140)
 [![View on GitHub](https://img.shields.io/badge/View%20on-GitHub-181717?logo=github&style=flat-square)](https://github.com/gituserc1140/RAWG-Games)
 
