@@ -51,7 +51,6 @@ def main():
             st.warning("Please enter a game name to search.")
             return
 
-    if search_clicked and api_key and query:
         games = fetch_games(api_key, query)
         if games:
             for game in games:

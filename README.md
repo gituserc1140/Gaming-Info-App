@@ -16,14 +16,10 @@ Users can enter their own API key directly in the app UI and search for games by
 
 ## Setup
 
-1. Clone the repository:
-   - `git clone https://github.com/gituserc1140/RAWG-Games.git`
-2. Move into the project:
-   - `cd RAWG-Games`
-3. Install dependencies:
-   - `pip install -r requirements.txt`
-4. Start the Streamlit app:
-   - `streamlit run app.py`
+1. Clone the repository: `git clone https://github.com/gituserc1140/RAWG-Games.git`
+2. Move into the project: `cd RAWG-Games`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Start the Streamlit app: `streamlit run app.py`
 
 ## How to use
 
