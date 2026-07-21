@@ -1,9 +1,11 @@
 import streamlit as st
 import requests
+import logging
 
 REPO_URL = "https://github.com/gituserc1140/RAWG-Games"
 SPONSOR_URL = "https://github.com/sponsors/gituserc1140"
 REQUEST_TIMEOUT_SECONDS = 20
+logger = logging.getLogger(__name__)
 
 def fetch_games(api_key, query):
     url = "https://api.rawg.io/api/games"
@@ -13,7 +15,8 @@ def fetch_games(api_key, query):
             params={"key": api_key, "search": query},
             timeout=REQUEST_TIMEOUT_SECONDS,
         )
-    except requests.RequestException:
+    except requests.RequestException as exc:
+        logger.exception("Network error while fetching games: %s", exc)
         st.error("Network error while fetching games. Please check your connection and try again.")
         return []
 

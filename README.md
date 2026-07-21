@@ -31,4 +31,6 @@ Users can enter their own API key directly in the app UI and search for games by
 ## Reference
 
 This project follows a similar concept to:  
-https://github.com/gituserc1140/TranscriptionApp
+https://github.com/gituserc1140/TranscriptionApp  
+
+Similarity: both apps collect an API key from the frontend at runtime, then process user input and render results in a simple Streamlit interface.
