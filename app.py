@@ -3,6 +3,7 @@ import requests
 import logging
 import os
 
+logging.basicConfig(level=logging.ERROR)
 REPO_URL = os.getenv("RAWG_GITHUB_REPO_URL", "https://github.com/gituserc1140/RAWG-Games")
 SPONSOR_URL = os.getenv("RAWG_GITHUB_SPONSOR_URL", "https://github.com/sponsors/gituserc1140")
 REQUEST_TIMEOUT_SECONDS = 20
@@ -52,9 +53,9 @@ def main():
     elif not query:
         st.info("Enter a game name to enable search.")
 
-    search_clicked = st.button("Search", disabled=not (api_key and query))
+    search_pressed = st.button("Search", disabled=not (api_key and query))
 
-    if search_clicked:
+    if search_pressed:
         games = fetch_games(api_key, query)
         if games:
             for game in games:
