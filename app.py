@@ -42,7 +42,7 @@ def render_project_links():
 GAMING_CSS = """
 <style>
 /* ── Base ───────────────────────────────────────────────────── */
-html, body, .stApp, [data-testid="stApp"], [data-testid="stAppViewContainer"],
+html, body, .stApp, [data-testid="stAppViewContainer"],
 [data-testid="stAppViewContainer"] > .main {
     background: radial-gradient(circle at top, #171736 0%, #0a0a14 48%, #06060f 100%) !important;
     color: #e0e0f0 !important;
