@@ -1,4 +1,4 @@
-# RAWG-Games
+# Gaming Info App
 
 Streamlit app for searching video games using the [RAWG API](https://rawg.io/apidocs).  
 Users can enter their own API key directly in the app UI and search for games by name.
