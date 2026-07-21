@@ -39,8 +39,86 @@ def render_project_links():
     with col2:
         st.link_button("GitHub Sponsors", SPONSOR_URL, use_container_width=True)
 
+GAMING_CSS = """
+<style>
+/* ── Base ───────────────────────────────────────────────────── */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+    background-color: #0a0a14 !important;
+    color: #e0e0f0 !important;
+}
+[data-testid="stHeader"] {
+    background-color: #0a0a14 !important;
+}
+[data-testid="stSidebar"] {
+    background-color: #0d0d1e !important;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    color: #00e5ff !important;
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.55);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    letter-spacing: 1px;
+}
+p, li, label, div {
+    color: #c8c8e8 !important;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+input[type="text"], input[type="password"] {
+    background-color: #12122a !important;
+    color: #e0e0f0 !important;
+    border: 1px solid #7b2fff !important;
+    border-radius: 6px !important;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #00e5ff !important;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4) !important;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+button[kind="primary"], [data-testid="baseButton-primary"] {
+    background: linear-gradient(135deg, #7b2fff, #00e5ff) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+button[kind="primary"]:hover, [data-testid="baseButton-primary"]:hover {
+    opacity: 0.85 !important;
+}
+[data-testid="baseButton-secondary"] {
+    background-color: #12122a !important;
+    color: #00e5ff !important;
+    border: 1px solid #00e5ff !important;
+    border-radius: 6px !important;
+}
+
+/* ── Info / Warning banners ─────────────────────────────────── */
+[data-testid="stAlert"] {
+    background-color: #12122a !important;
+    border-left: 4px solid #7b2fff !important;
+    color: #c8c8e8 !important;
+    border-radius: 6px !important;
+}
+
+/* ── Dividers ───────────────────────────────────────────────── */
+hr {
+    border-color: #2a2a4a !important;
+}
+
+/* ── Game card text ─────────────────────────────────────────── */
+[data-testid="stMarkdownContainer"] strong {
+    color: #00e5ff !important;
+}
+</style>
+"""
+
 def main():
-    st.set_page_config(page_title="RAWG Video Games Search", page_icon="🎮")
+    st.set_page_config(page_title="RAWG Video Games Search", page_icon=":video_game:")
+    st.markdown(GAMING_CSS, unsafe_allow_html=True)
     st.title("RAWG Video Games Search")
     render_project_links()
 
