@@ -13,8 +13,8 @@ def fetch_games(api_key, query):
             params={"key": api_key, "search": query},
             timeout=REQUEST_TIMEOUT_SECONDS,
         )
-    except requests.RequestException as exc:
-        st.error(f"Network error while fetching games: {exc}")
+    except requests.RequestException:
+        st.error("Network error while fetching games. Please check your connection and try again.")
         return []
 
     if response.status_code == 200:
@@ -41,16 +41,14 @@ def main():
 
     api_key = st.text_input("Enter your RAWG API Key", type="password")
     query = st.text_input("Search for a game")
-    search_clicked = st.button("Search")
+    if not api_key:
+        st.info("Enter your RAWG API key to enable search.")
+    if not query:
+        st.info("Enter a game name to enable search.")
+
+    search_clicked = st.button("Search", disabled=not (api_key and query))
 
     if search_clicked:
-        if not api_key:
-            st.warning("Please enter your RAWG API key to search for games.")
-            return
-        if not query:
-            st.warning("Please enter a game name to search.")
-            return
-
         games = fetch_games(api_key, query)
         if games:
             for game in games:
